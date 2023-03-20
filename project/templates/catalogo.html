@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="display-4 text-center mb-4">Nuestros Productos</h1>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                {% if productos == 0 %}
+                <div class="col-md-12 text-center">
+                    <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+                        <h4 class="alert-heading" style="color: black;">Disculpa las molestias</h4>
+                        <p style="color: black;">En este momento no hay productos disponibles. <br>
+                            Estamos trabajando para mostararte los mejores para el arte urbano y para rodar
+                            por el mundo.</p>
+                        <hr>
+                    </div>
+                </div>
+                {% else %}
+                {% for p in productos %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="../static/img/{{ p.imagen }}" class="card-img-top" alt="..."
+                            style="object-fit: cover; height: 50%;">
+                        <div class="card-body" style="text-align: center;">
+                            <h5 class="card-title" style="color: black;">{{ p.nombre }}</h5>
+                            <p class="card-text" style="color: black;">{{ p.descripcion }}</p>
+                            <p class="card-text text-end mb-0" style="color: black;"><strong>Precio: $ {{ p.precio
+                                    }}</strong></p>
+                        </div>
+                        <div class="card-footer align-items-center">
+                            <button class="btn btn-primary btn-block">Comprar</button>
+                            <button type="button" class="btn btn-outline-info mt-2" data-bs-toggle="modal"
+                                data-bs-target="#productDetails{{index}}">
+                                <i class="fa fa-eye"></i> Ver detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

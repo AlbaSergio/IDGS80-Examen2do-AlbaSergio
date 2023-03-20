@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-center mb-4">Crea tu usuario</h3>
+            <div class="card">
+                <div class="card-body">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ messages[0] }}. Dirigete a <a href="{{ url_for('auth.login') }}">login</a> e inicia sesión.
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                    <form method="POST" action="/security/register">
+                        <div class="form-group">
+                            <label for="email" style="color:black">Email</label>
+                            <input type="email" class="form-control form-control-lg" id="email" name="email"
+                                placeholder="Email" autofocus="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" style="color:black">Nombre</label>
+                            <input type="text" class="form-control form-control-lg" id="name" name="name"
+                                placeholder="Nombre" autofocus="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" style="color:black">Contraseña</label>
+                            <input type="password" class="form-control form-control-lg" id="password" name="password"
+                                placeholder="Contraseña">
+                        </div>
+
+                        <button type="submit" class="btn btn-outline-primary btn-block rounded-pill px-4 py-2 btn-neon">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

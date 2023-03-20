@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Xtreme SkateShop</title>
+
+  <!--  Styles  -->
+  <link rel="shortcut icon" href="../static/img/logoSpit.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Freckle+Face">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="../static/css/estilos.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg main-nav px-0">
+        <a class="navbar-brand" href="/">
+          <img src="../static/img/logoSpit.png" style="max-width: 50%; height: auto;" alt="" class="logo-animation">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#inicio" aria-controls="inicio"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar icon-bar-1"></span>
+          <span class="icon-bar icon-bar-2"></span>
+          <span class="icon-bar icon-bar-3"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="inicio">
+          <ul class="navbar-nav ml-auto text-uppercase f1">
+            <li>
+              <a href="/">Inicio</a>
+            </li>
+            {% if not current_user.is_authenticated %}
+            <li>
+              <a href="{{ url_for('auth.login') }}"> <i class="fa fa-user-circle" aria-hidden="true"></i> Iniciar sesion
+              </a>
+            </li>
+            {% endif %}
+
+            {% if current_user.is_authenticated and current_user.admin == 0 %}
+            <li>
+              <a href="{{ url_for('main.catalogo') }}"> <i class="fas fa-book"></i> Catalogo </a>
+            </li>
+            {% endif %}
+
+            {% if current_user.admin %}
+            <li>
+              <a href="{{ url_for('main.gestion') }}"> <i class="fas fa-edit"></i> Gestion de Prdoductos </a>
+            </li>
+            {% endif %}
+
+            {% if not current_user.is_authenticated %}
+            <li>
+              <a href="{{ url_for('auth.register') }}"> <i class="fa fa-user-check" aria-hidden="true"></i>
+                Registrarse</a>
+            </li>
+            {% endif %}
+
+            {% if not current_user.is_authenticated %}
+            <li>
+              <a href="{{ url_for('auth.contacto') }}"> <i class="fa fa-envelope" aria-hidden="true"></i>
+                Contacto</a>
+            </li>
+            {% endif %}
+
+            {% if current_user.is_authenticated %}
+            <li>
+              <a href="{{ url_for('auth.logout') }}"> <i class="fas fa-door-open"></i> {{current_user.nombre}},
+                salir</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row">
+
+      <div class="container-fluid">
+
+        <div class="form-group">
+          {% block content %}
+
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </header>
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <script src="../static/js/main.js"></script>
+  <!-- Scripts -->
+  <script src="scripts/index.js"></script>
+
+</body>
+
+
+</html>

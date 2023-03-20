@@ -1,0 +1,128 @@
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h3 {
+  font-family: 'Freckle Face', cursive;
+  color: whitesmoke;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  font-family: 'Freckle Face', cursive;
+  color: whitesmoke;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #dee2e6;
+}
+
+.table thead tr {
+  background-color: black;
+  color: black;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: black;
+}
+
+.table tbody tr:hover {
+  background-color: black;
+}
+
+.btn-outline-success {
+  font-family: 'Freckle Face', cursive;
+  border-color: #28a745;
+  border-radius: 25%;
+  color: #28a745;
+  background-color: transparent;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-outline-success i {
+  margin-right: 5px;
+}
+
+
+.icon_white {
+  margin-right: 5px;
+}
+
+
+h1,
+h3,
+h2,
+h4,
+h5,
+.flashes {
+  font-family: 'Freckle Face', cursive;
+  color: whitesmoke;
+}
+
+p,
+label,
+small {
+  font-family: 'Freckle Face', cursive;
+  color: whitesmoke;
+}
+
+.btn-outline-primary {
+  font-family: 'Freckle Face', cursive;
+  background-color: transparent;
+  border: 2px solid #f8d1e4;
+  color: #f8d1e4;
+  box-shadow: 0 0 10px #f8d1e4;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-primary:hover,
+.btn-primary:focus {
+  background-color: #f8d1e4;
+  color: #fff;
+  box-shadow: 0 0 10px #f8d1e4, 0 0 20px #f8d1e4, 0 0 30px #f8d1e4, 0 0 40px #f8d1e4;
+}
+
+.alert-flash {
+  font-family: 'Freckle Face', cursive;
+  background-color: #87ebcf;
+  color: black;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.btn-outline-danger {
+  font-family: 'Freckle Face', cursive;
+}
+
+
+.logo-animation {
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1.5) rotate(360deg);
+  }
+}

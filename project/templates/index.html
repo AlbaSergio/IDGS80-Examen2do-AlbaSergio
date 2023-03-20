@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<main>
+    <div style="text-align: center;">
+        <h3>Las mejores piezas y marcas</h3><br>
+        <p>Las mejores marcas estan con nosotros, por que aqui tenemos calidad.
+         <br>Encontraras siempre lo mejor y lo mas reciente. </p>
+    </div>
+    
+    <!-- Carrusel de skateboarding -->
+    <div id="carouselSkateboarding" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselSkateboarding" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselSkateboarding" data-slide-to="1"></li>
+            <li data-target="#carouselSkateboarding" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../static/img/sl1.jpeg" class="d-block w-100"
+                    alt="..." style="max-width: 100%; height: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="../static/img/sl2.png" class="d-block w-100"
+                    alt="..." style="max-width: 100%; height: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="../static/img/sl3.jpeg" class="d-block w-100"
+                    alt="..." style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+
+    <div style="text-align: center;">
+        <h3>El mejor instrumental para el arte urbanos</h3>
+    </div>
+    
+    <!-- Carrusel de Graffiti -->
+    <div id="carouselGraffiti" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselGraffiti" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselGraffiti" data-slide-to="1"></li>
+            <li data-target="#carouselGraffiti" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../static/img/slg1.jpeg" class="d-block w-100"
+                    alt="..." style="max-width: 100%; height: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="../static/img/slg2.jpg" class="d-block w-100"
+                    alt="..." style="max-width: 100%; height: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="../static/img/slg3.jpg" class="d-block w-100"
+                    alt="..." style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+   
+</main>
+
+
+{%endblock content%}
